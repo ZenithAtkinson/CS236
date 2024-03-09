@@ -1,0 +1,59 @@
+#pragma once
+#include <map>
+#include "Relation.h"
+#include "DatalogProgram.h"
+
+class Database {
+private:
+    std::map<std::string, Relation> relations;
+
+public:
+
+   Database() {
+    }
+     
+    void addRelation(std::string relationName, std::vector<std::string> schemeNames){ //what datatype is this schemes? is it the schemes object, or the parameters from datalog? call this for every scheme
+        std::cout << "WORKING: " << relationName << std::endl;
+        Relation rel(relationName, schemeNames);
+        relations.insert({relationName, rel});
+    }
+    //We now have several relations that are all named and have a header of schemes, but dont have any tuples yet(no data yet).
+    //Now, we must access each of these relations, and add the corresponding tuple to them below. We can access the correct location to place the tuple
+        //by accessing the relation name and the scheme name(index?) of the respective tuple
+
+    void addTuples(std::string relationName, const Tuple& tupleToAdd){
+        /*for relation in relations, 
+            if relationName == relations keyvalue
+                add factValues to the relation   
+                relations[i] = tuples?
+        */
+       auto it = relations.find(relationName); //confirming/finding given relationName in map
+       if(it != relations.end()) {
+        it->second.addTuple(tupleToAdd); //adding tuple?
+        } else {
+        //UNFINISHED
+        
+        }    
+    }
+    
+    //needs to return a map of relations
+
+    std::map<std::string, Relation>& getRelations() {
+        return relations;
+    }
+
+    void printRelation() {
+    for (const auto& pair : relations) {
+        std::string relationName = pair.first;
+        const Relation& relation = pair.second;
+        
+        //Printing relation name
+        std::cout << "Relation: " << relationName << std::endl;
+        
+        //Calling toString from relation.
+        std::cout << relation.toString();
+        std::cout << "--------------------------" << std::endl;
+    }
+}
+
+};

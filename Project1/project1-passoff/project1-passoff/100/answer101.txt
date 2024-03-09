@@ -1,0 +1,309 @@
+Bucket 20
+Running input 21
+1,2c1
+< (EOF,"",1)
+< Total Tokens = 1
+---
+> Total tokens = 0
+diff failed on test 21
+Running input 22
+17,18c17
+< (EOF,"",12)
+< Total Tokens = 17
+---
+> Total tokens = 16
+diff failed on test 22
+Running input 23
+15,16c15
+< (EOF,"",20)
+< Total Tokens = 15
+---
+> Total tokens = 14
+diff failed on test 23
+Bucket 40
+Running input 41
+18,19c18
+< (EOF,"",24)
+< Total Tokens = 18
+---
+> Total tokens = 17
+diff failed on test 41
+Bucket 60
+Running input 61
+29,30c29
+< (EOF,"",34)
+< Total Tokens = 29
+---
+> Total tokens = 28
+diff failed on test 61
+Running input 62
+10c10,13
+< (ID,"SchemesFactsRulesQueries",12)
+---
+> (SCHEMES,"Schemes",12)
+> (FACTS,"Facts",12)
+> (RULES,"Rules",12)
+> (QUERIES,"Queries",12)
+13c16,17
+< (ID,"Schemess",16)
+---
+> (SCHEMES,"Schemes",16)
+> (ID,"s",16)
+17c21,22
+< (ID,"Factss",21)
+---
+> (FACTS,"Facts",21)
+> (ID,"s",21)
+21c26,27
+< (ID,"Ruless",26)
+---
+> (RULES,"Rules",26)
+> (ID,"s",26)
+25c31,32
+< (ID,"Queriess",31)
+---
+> (QUERIES,"Queries",31)
+> (ID,"s",31)
+27,28c34
+< (EOF,"",35)
+< Total Tokens = 27
+---
+> Total tokens = 33
+diff failed on test 62
+Bucket 80
+Running input 81
+8,9c8
+< (EOF,"",16)
+< Total Tokens = 8
+---
+> Total tokens = 7
+diff failed on test 81
+Running input 82
+30,32c30,31
+< ",9)
+< (EOF,"",19)
+< Total Tokens = 21
+---
+> ",19)
+> Total tokens = 20
+diff failed on test 82
+Bucket 100
+Running input 101
+1,91c1,117
+< Bucket 20
+< Running input 21
+< 1,2c1
+< < (EOF,"",1)
+< < Total Tokens = 1
+< ---
+< > Total tokens = 0
+< diff failed on test 21
+< Running input 22
+< 17,18c17
+< < (EOF,"",12)
+< < Total Tokens = 17
+< ---
+< > Total tokens = 16
+< diff failed on test 22
+< Running input 23
+< 15,16c15
+< < (EOF,"",20)
+< < Total Tokens = 15
+< ---
+< > Total tokens = 14
+< diff failed on test 23
+< Bucket 40
+< Running input 41
+< 18,19c18
+< < (EOF,"",24)
+< < Total Tokens = 18
+< ---
+< > Total tokens = 17
+< diff failed on test 41
+< Bucket 60
+< Running input 61
+< 29,30c29
+< < (EOF,"",34)
+< < Total Tokens = 29
+< ---
+< > Total tokens = 28
+< diff failed on test 61
+< Running input 62
+< 10c10,13
+< < (ID,"SchemesFactsRulesQueries",12)
+< ---
+< > (SCHEMES,"Schemes",12)
+< > (FACTS,"Facts",12)
+< > (RULES,"Rules",12)
+< > (QUERIES,"Queries",12)
+< 13c16,17
+< < (ID,"Schemess",16)
+< ---
+< > (SCHEMES,"Schemes",16)
+< > (ID,"s",16)
+< 17c21,22
+< < (ID,"Factss",21)
+< ---
+< > (FACTS,"Facts",21)
+< > (ID,"s",21)
+< 21c26,27
+< < (ID,"Ruless",26)
+< ---
+< > (RULES,"Rules",26)
+< > (ID,"s",26)
+< 25c31,32
+< < (ID,"Queriess",31)
+< ---
+< > (QUERIES,"Queries",31)
+< > (ID,"s",31)
+< 27,28c34
+< < (EOF,"",35)
+< < Total Tokens = 27
+< ---
+< > Total tokens = 33
+< diff failed on test 62
+< Bucket 80
+< Running input 81
+< 8,9c8
+< < (EOF,"",16)
+< < Total Tokens = 8
+< ---
+< > Total tokens = 7
+< diff failed on test 81
+< Running input 82
+< 30,32c30,31
+< < ",9)
+< < (EOF,"",19)
+< < Total Tokens = 21
+< ---
+< > ",19)
+< > Total tokens = 20
+< diff failed on test 82
+< Bucket 100
+< Running input 101
+---
+> (COMMENT,"# complete program with all token types",2)
+> (SCHEMES,"Schemes",4)
+> (COLON,":",4)
+> (ID,"student",4)
+> (LEFT_PAREN,"(",4)
+> (ID,"Name",4)
+> (COMMA,",",4)
+> (ID,"ID",4)
+> (COMMA,",",4)
+> (ID,"Address",4)
+> (COMMA,",",4)
+> (ID,"Major",4)
+> (RIGHT_PAREN,")",4)
+> (FACTS,"Facts",5)
+> (COLON,":",5)
+> (ID,"student",5)
+> (LEFT_PAREN,"(",5)
+> (STRING,"'North'",5)
+> (COMMA,",",5)
+> (STRING,"'51'",5)
+> (COMMA,",",5)
+> (STRING,"'10 Main'",5)
+> (COMMA,",",5)
+> (STRING,"'CS'",5)
+> (RIGHT_PAREN,")",5)
+> (PERIOD,".",5)
+> (ID,"student",6)
+> (LEFT_PAREN,"(",6)
+> (STRING,"'Reagan'",6)
+> (COMMA,",",6)
+> (STRING,"'52'",6)
+> (COMMA,",",6)
+> (STRING,"'11 Maple'",6)
+> (COMMA,",",6)
+> (STRING,"'CS'",6)
+> (RIGHT_PAREN,")",6)
+> (PERIOD,".",6)
+> (ID,"student",6)
+> (LEFT_PAREN,"(",6)
+> (STRING,"'Reagan'",6)
+> (COMMA,",",6)
+> (STRING,"'52'",6)
+> (COMMA,",",6)
+> (STRING,"'11 Maple'",6)
+> (COMMA,",",6)
+> (STRING,"'CS'",6)
+> (RIGHT_PAREN,")",6)
+> (PERIOD,".",6)
+> (ID,"student",7)
+> (LEFT_PAREN,"(",7)
+> (STRING,"'Clinton'",7)
+> (COMMA,",",7)
+> (STRING,"'53'",7)
+> (COMMA,",",7)
+> (STRING,"'12 Ashton'",7)
+> (COMMA,",",7)
+> (STRING,"'MATH'",7)
+> (RIGHT_PAREN,")",7)
+> (PERIOD,".",7)
+> (RULES,"Rules",9)
+> (COLON,":",9)
+> (ID,"major",9)
+> (LEFT_PAREN,"(",9)
+> (ID,"Name",9)
+> (COMMA,",",9)
+> (ID,"Major",9)
+> (RIGHT_PAREN,")",9)
+> (COLON_DASH,":-",9)
+> (ID,"student",9)
+> (LEFT_PAREN,"(",9)
+> (ID,"Name",9)
+> (COMMA,",",9)
+> (ID,"ID",9)
+> (COMMA,",",9)
+> (ID,"Address",9)
+> (COMMA,",",9)
+> (ID,"Major",9)
+> (RIGHT_PAREN,")",9)
+> (PERIOD,".",9)
+> (QUERIES,"Queries",11)
+> (COLON,":",11)
+> (ID,"major",11)
+> (LEFT_PAREN,"(",11)
+> (STRING,"'North'",11)
+> (COMMA,",",11)
+> (ID,"Major",11)
+> (RIGHT_PAREN,")",11)
+> (Q_MARK,"?",11)
+> (ID,"major",12)
+> (LEFT_PAREN,"(",12)
+> (ID,"Name",12)
+> (COMMA,",",12)
+> (STRING,"'MATH'",12)
+> (RIGHT_PAREN,")",12)
+> (Q_MARK,"?",12)
+> (ID,"major",12)
+> (LEFT_PAREN,"(",12)
+> (ID,"Name",12)
+> (COMMA,",",12)
+> (STRING,"'MATH'",12)
+> (RIGHT_PAREN,")",12)
+> (Q_MARK,"?",12)
+> (ID,"major",13)
+> (LEFT_PAREN,"(",13)
+> (ID,"Name",13)
+> (COMMA,",",13)
+> (STRING,"'MATH'",13)
+> (RIGHT_PAREN,")",13)
+> (Q_MARK,"?",13)
+> (ID,"major",13)
+> (LEFT_PAREN,"(",13)
+> (ID,"Name",13)
+> (COMMA,",",13)
+> (STRING,"'MATH'",13)
+> (RIGHT_PAREN,")",13)
+> (Q_MARK,"?",13)
+> Total tokens = 116
+diff failed on test 101
+Running input 102
+830,831c830
+< (EOF,"",86)
+< Total Tokens = 830
+---
+> Total tokens = 829
+diff failed on test 102
