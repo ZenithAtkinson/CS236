@@ -99,11 +99,5 @@ class Relation {
       return result;
   }
 
-  static bool joinable(const Scheme& leftScheme, const Scheme& rightScheme, const Tuple& leftTuple, const Tuple& rightTuple) {
-    // add code to test whether the tuples are joinable
-    /*The 'joinable' function is given the scheme and a tuple from the left relation of the join and the scheme and a tuple from the right relation of the join. The 'joinable' function returns 'true' if the two tuples should be combined to form a tuple in the result of the join.*/
-    return true;
-  }
-
 
 };

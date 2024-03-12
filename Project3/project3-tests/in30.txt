@@ -1,5 +1,3 @@
-# test with in30
-
 Schemes:
   SK(A,B)
 Facts:

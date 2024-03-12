@@ -73,20 +73,23 @@ int main(int argc, char *argv[]) {
     // Use the datalog program as needed
     //if... schemes(0) || Facts(0) || etc... throw error.
     
-    std::cout << crdatalogProgram.toString();  
-    cout << "END" << endl;
-       for (const auto& scheme : crdatalogProgram.schemes) {
+    //Print out entire relation:
+    //std::cout << crdatalogProgram.toString();
+    //cout << "END" << endl;
+
+    //Print out scheme details:
+       /*for (const auto& scheme : crdatalogProgram.schemes) {
         // If scheme's name is stored in parameters or another accessible member
         std::cout << "Scheme details: " << scheme.toString() << std::endl; // Adjust based on how you can access the scheme name or details
-    }
+    }*/
 
     Interpreter interpreter(crdatalogProgram);
     interpreter.evaluateSchemes();
     interpreter.evaluateFacts();
-    //interpreter.evaluateQueries();
+    interpreter.evaluateAllQueries();
     
-    Database& db = interpreter.getDatabase();
-    db.printRelation(); 
+    //Database& db = interpreter.getDatabase();
+    //db.printRelation(); 
     
 
     return 0;
