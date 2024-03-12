@@ -5,9 +5,9 @@
 class Parameter {
 public:
     std::string value; //given parameter
-    bool val_id;
+    bool isConstant;
     //constructor with given parameter
-    Parameter(const std::string& value, const bool val_id) : value(value), val_id(val_id){}
+    Parameter(const std::string& value, const bool isConstant) : value(value), isConstant(isConstant){}
 
     //ID = false;
     //string = true;

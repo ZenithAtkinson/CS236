@@ -32,7 +32,7 @@ class Relation {
   }
 
   
-  Relation select(int index, const std::string& value) const {
+  Relation select(int index, const std::string& value) const { //Selecting rows equal to given value
     Relation result(name, scheme);
     for (auto it = tuples.begin(); it != tuples.end(); ++it) {
       if (it->at(index) == value){
@@ -42,12 +42,55 @@ class Relation {
     }
     return result;  
   }
+  
   //need a second select_match for matching values. If there is a query that is e(X,Y,X), its gotta check that the two X's match and are different than Y. If its X,Y,Z, it has to confirm these are different.
+  //Can use a Map variable to see if we find it more than once?
+  //Select 2: Selects the rows where 2 attributes in the tuple are the same. (variables). ONLY selects rows that are matching. Pass in 2 column indexes, and selects the rows where the values of both columns are the same.
+  //Loop through columns
+  //The given row ONLY belongs in the new relation if the values in both columns at that row are equal to eachother. Remember, it not for the headers, its the variables in the rows.
+  //
+  //Bool select_2(parameter)? 
+  Relation selectType2(int index1, int index2) const {
+    Relation result(name, scheme);
+    for (const auto& tuple : tuples) {
+        if (tuple.at(index1) == tuple.at(index2)) {
+            result.addTuple(tuple);
+        }
+    }
+    return result;
+  }
 
-  //Needs additional functions for project and rename. When called, each function will:
-    //Make an empty relation, fill the relation, return the relation.
-    //So each time we call the function the change the relation, we just make a new relation with the changes and return it.
 
+  
+  Relation project(const std::vector<int>& indices) const {
+    std::vector<std::string> newSchemeNames;
+    //New scheme
+    for (int index : indices) {
+        newSchemeNames.push_back(this->scheme.at(index));
+    }
+    Scheme newScheme(newSchemeNames); 
+
+    Relation result(this->name, newScheme);
+    for (const auto& tuple : this->tuples) {
+        //New tuple
+        std::vector<std::string> newTupleValues;
+        for (int index : indices) {
+            newTupleValues.push_back(tuple.at(index));
+        }
+        Tuple newTuple(newTupleValues);
+        result.addTuple(newTuple);
+    }
+    return result;
+  } 
+
+    Relation rename(const Scheme& newScheme) const {
+        //Assuming same length as old one
+        Relation result(name, newScheme);
+        for (const auto& tuple : tuples) {
+            result.addTuple(tuple); //Just change scheme name.?
+        }
+        return result;
+    }
 
 
 };

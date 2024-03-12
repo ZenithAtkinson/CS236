@@ -83,6 +83,7 @@ int main(int argc, char *argv[]) {
     Interpreter interpreter(crdatalogProgram);
     interpreter.evaluateSchemes();
     interpreter.evaluateFacts();
+    //interpreter.evaluateQueries();
     
     Database& db = interpreter.getDatabase();
     db.printRelation(); 

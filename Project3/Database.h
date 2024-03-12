@@ -1,5 +1,6 @@
 #pragma once
 #include <map>
+#include <iostream>
 #include "Relation.h"
 #include "DatalogProgram.h"
 
@@ -31,15 +32,8 @@ public:
        if(it != relations.end()) {
         it->second.addTuple(tupleToAdd); //adding tuple?
         } else {
-        //UNFINISHED
-        
+            //relation doesnt exist
         }    
-    }
-    
-    //needs to return a map of relations
-
-    std::map<std::string, Relation>& getRelations() {
-        return relations;
     }
 
     void printRelation() {
@@ -56,4 +50,9 @@ public:
     }
 }
 
+    std::map<std::string, Relation>& getRelations() {
+        return relations;
+    }
+    
+    //needs to return a map of relations
 };
