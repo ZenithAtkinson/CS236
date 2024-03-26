@@ -31,15 +31,71 @@ void printTokens(const std::vector<Token>& tokens) {
     }
 }
 
-int main() {
+int main(int argc, char *argv[]) {
+    //getting input file and making it a .txt file
+     if (argc != 2) {
+        std::cerr << "Usage: " << argv[0] << " <input_file>" << std::endl;
+        return 1;
+    }
 
-  Scheme scheme1( { "A", "B" } );
-  Scheme scheme2( { "B", "C" } );
+    std::string inputText = readFile(argv[1]);
 
-  Tuple tuple1( {"'1'", "'2'"} );
-  Tuple tuple2( {"'3'", "'4'"} );
+    //scanner with .txt file as input
+    Scanner scanner(inputText);
 
-  Relation::joinable(scheme1, scheme2, tuple1, tuple2);
+    //TOKENIZING, going ino EOFILE is reached. creating vector of tokens
+    std::vector<Token> tokens;
+    Token token;
+    for (size_t i = 0; token.getType() != EOFILE; ++i) {
+        tokens.push_back(token);
+        token = scanner.scanToken();
+    }
+    //Add final EOFILE to the tokens.
+    token = scanner.scanToken();
+    tokens.push_back(token);
 
+    // Print all tokens
+    //printTokens(tokens);
+    tokens.erase(tokens.begin());
+
+    //parsing...
+
+    Parser p(tokens);
+    
+    //cout << "SIZE OF THE TOKENS VECOTR:---------------" << tokens.size() << endl;
+    DatalogProgram crdatalogProgram = p.datalogProgram();
+    /*Fix error handling in the parser. (Throw an Exception in the 'throwError' function.) (Catch the Exception at the top of the parser and report the error.)
+        Write classes for Parameter, Predicate, Rule, and Datalog Program.
+        Add code to the parser to create Parameter, Predicate, and Rule objects while parsing, and construct a Datalog Program object that contains lists of Schemes, Facts, Rules, and Queries.*/
+    //cout << "DatalogProgram function creation in parser" << endl;
+    //DatalogProgram datalogProgram = ...?
+    
+    // Use the datalog program as needed
+    //if... schemes(0) || Facts(0) || etc... throw error.
+    
+    //Print out entire relation:
+    //std::cout << crdatalogProgram.toString();
+    //cout << "END" << endl;
+
+    //Print out scheme details:
+       /*for (const auto& scheme : crdatalogProgram.schemes) {
+        // If scheme's name is stored in parameters or another accessible member
+        std::cout << "Scheme details: " << scheme.toString() << std::endl; // Adjust based on how you can access the scheme name or details
+    }*/
+
+    Interpreter interpreter(crdatalogProgram);
+    interpreter.evaluateSchemes();
+    interpreter.evaluateFacts();
+    cout << "Rule evaluation" << endl;
+    interpreter.evaluateRules();
+    cout << "Query evaluation" << endl;
+    interpreter.evaluateAllQueries();
+    
+    
+    //Database& db = interpreter.getDatabase();
+    //db.printRelation(); 
+    
+
+    return 0;
 }
  
